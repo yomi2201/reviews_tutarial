@@ -8,5 +8,6 @@ class User < ApplicationRecord
   uniqueness: { case_sensitive: false }
 
   has_secure_password
+  #「パスワードのハッシュ化」では元に戻せない (不可逆)  暗号は可逆
   validates :password, presence: true, length: { minimum: 6 }
 end
